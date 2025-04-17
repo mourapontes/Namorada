@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Meu Amor 💖</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="shortcut icon" href="coracao.png" type="image/x-icon" />
+</head>
+<body>
+  <main class="card" role="main">
+    <header>
+      <h1 class="title">Para minha eterna namorada</h1>
+      <h2 class="title">Ana Carla 💖</h2>
+    </header>
+
+    <section>
+      <p class="message">
+        Meu amor, cada dia contigo é um poema que a vida escreve com doçura. 
+        Teu sorriso é sol que nasce dentro de mim, e o teu amor... ah, o teu amor 
+        é a melodia mais suave que meu coração já ouviu. 💕
+      </p>
+    </section>
+
+    <div class="audio-container">
+        <audio id="backgroundMusic" controls>
+            <source src="musica.mp3" type="audio/mpeg">
+            Seu navegador não suporta o elemento de áudio.
+        </audio>
+    </div>
+
+    <button id="revealButton" aria-expanded="false">Clique aqui!</button>
+
+    <section id="secretMessage" class="secret hide" aria-hidden="true">
+      <p>
+        Três meses... e meu coração já entende o que é amar com calma e com alma. 
+        Cada dia ao teu lado é um verso doce que o tempo escreve em silêncio. 
+        Teu sorriso ilumina manhãs que antes eram comuns, e teu amor me ensina 
+        que a felicidade mora nos detalhes. Te amo muito, meu amor... com tudo o que sou, 
+        com tudo o que sinto. Que venham mais capítulos dessa nossa poesia a dois. 💖💖
+      </p>
+    </section>
+  </main>
+
+  <script>
+    // Função para controlar a revelação da mensagem
+    const secretMessage = document.getElementById('secretMessage');
+    const playButton = document.getElementById('revealButton');
+    const audio = document.getElementById('backgroundMusic');
+    
+    // Revela a mensagem secreta ao clicar no botão e inicia a música
+    playButton.addEventListener('click', () => {
+      secretMessage.classList.toggle('hide');
+      if (!secretMessage.classList.contains('hide')) {
+        audio.play(); // Toca a música quando a mensagem é revelada
+      } else {
+        audio.pause(); // Pausa a música quando a mensagem é escondida
+      }
+    });
+  </script>
+</body>
+</html>
